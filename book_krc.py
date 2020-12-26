@@ -147,7 +147,7 @@ until_time = datetime(now.year, now.month, now.day, hour=hour, minute=minute)
 if now > until_time:
     until_time += timedelta(days=1)
 print("Waiting until {}:{}...".format(hour, minute))
-while :
+while True:
     time.sleep(1)
     total_seconds = int((until_time - datetime.now()).total_seconds())
     sys.stdout.write("\rTime left: {}         ".format(str(timedelta(seconds=total_seconds))))
